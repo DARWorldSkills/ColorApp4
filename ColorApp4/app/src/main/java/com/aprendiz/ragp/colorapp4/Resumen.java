@@ -1,9 +1,11 @@
 package com.aprendiz.ragp.colorapp4;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Resumen extends AppCompatActivity {
     TextView txtCorrectas, txtIncorrectas;
@@ -45,8 +47,29 @@ public class Resumen extends AppCompatActivity {
     }
 
     public void face(View view) {
+
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, "https://www.facebook.com/SENACaucaOficial/");
+        intent.setPackage("com.facebook.katana");
+        startActivity(intent);
+
     }
 
     public void twi(View view) {
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        String mensaje = "Correctas:" + txtCorrectas + "Incorrectas" +txtIncorrectas;
+        intent.putExtra(Intent.EXTRA_TEXT, mensaje);
+        intent.setPackage("com.twitter.android");
+
+        try {
+            startActivity(intent);
+        }catch (Exception e){
+            Toast.makeText(this, "No cuentas con está App", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
     }
 }
