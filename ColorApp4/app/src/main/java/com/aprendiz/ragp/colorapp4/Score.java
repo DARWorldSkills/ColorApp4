@@ -7,6 +7,11 @@ public class Score {
     public Score() {
     }
 
+    public Score(int puntaje, int incorrectas) {
+        this.puntaje = puntaje;
+        this.incorrectas = incorrectas;
+    }
+
     public int getPuntaje() {
         return puntaje;
     }
