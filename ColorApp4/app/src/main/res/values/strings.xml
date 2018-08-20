@@ -3,4 +3,6 @@
     <string name="palabrasdespelgadas">Palabras despelgadas</string>
     <string name="correctas">Correctas</string>
     <string name="intentosFaltantes">Intentos Faltantes</string>
+    <string name="tiempoporpalabra">Tiempo por palabra</string>
+    <string name="minimodeincorrectas">Minimo de incorrectas</string>
 </resources>
