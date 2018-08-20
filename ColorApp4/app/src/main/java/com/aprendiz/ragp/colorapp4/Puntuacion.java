@@ -2,6 +2,7 @@ package com.aprendiz.ragp.colorapp4;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,5 +64,9 @@ public class Puntuacion extends AppCompatActivity {
         txtTercero.setText("");
         txtCuarto.setText("");
         txtQuinto.setText("");
+    }
+
+    public void home(View view) {
+        finish();
     }
 }
