@@ -141,7 +141,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPalabra"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/uno" />
 
     <ImageButton
         android:id="@+id/btnColor3"
@@ -156,7 +156,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnColor1"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/uno" />
 
     <ImageButton
         android:id="@+id/btnColor2"
@@ -168,7 +168,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPalabra"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/dos" />
 
     <ImageButton
         android:id="@+id/btnColor4"
@@ -180,7 +180,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnColor2"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/dos" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btnPause"
