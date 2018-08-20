@@ -216,7 +216,7 @@ public class JuegoC extends AppCompatActivity implements View.OnClickListener{
         pausas++;
         if (pausas<=2){
             bandera1=false;
-            Dialog dialog = new Dialog(this);
+            final Dialog dialog = new Dialog(this);
             dialog.setContentView(R.layout.item_pausa);
             Button btnContinuar = dialog.findViewById(R.id.btnContinuar);
             btnContinuar.setOnClickListener(new View.OnClickListener() {
@@ -225,6 +225,7 @@ public class JuegoC extends AppCompatActivity implements View.OnClickListener{
                     bandera1=true;
                     ramdomizar();
                     segundos[0]=0;
+                    dialog.cancel();
                 }
             });
             dialog.setCancelable(false);
@@ -248,7 +249,7 @@ public class JuegoC extends AppCompatActivity implements View.OnClickListener{
         }
 
         if (valorcito==2){
-            if (icR==0){
+            if (icR==1){
                 correctas++;
             }else {
                 incorrectas++;
@@ -258,7 +259,7 @@ public class JuegoC extends AppCompatActivity implements View.OnClickListener{
 
 
         if (valorcito==3){
-            if (icR==0){
+            if (icR==2){
                 correctas++;
             }else {
                 incorrectas++;
@@ -267,7 +268,7 @@ public class JuegoC extends AppCompatActivity implements View.OnClickListener{
         }
 
         if (valorcito==4){
-            if (icR==0){
+            if (icR==3){
                 correctas++;
             }else {
                 incorrectas++;

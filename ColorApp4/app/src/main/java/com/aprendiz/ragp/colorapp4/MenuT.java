@@ -21,7 +21,7 @@ public class MenuT extends AppCompatActivity {
 
     public void puntuacion(View view) {
         guardar=0;
-        Intent intent = new Intent(MenuT.this,Juego.class);
+        Intent intent = new Intent(MenuT.this,Puntuacion.class);
         startActivity(intent);
     }
 

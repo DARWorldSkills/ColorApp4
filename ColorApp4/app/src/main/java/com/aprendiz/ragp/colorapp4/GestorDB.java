@@ -36,7 +36,7 @@ public class GestorDB extends SQLiteOpenHelper {
     public List<Score> scoreList(){
         List<Score> results = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM SCORE ORDER BY PUNTAJES DESC, INCORRECTAS DESC",null);
+        Cursor cursor = db.rawQuery("SELECT * FROM SCORE ORDER BY PUNTAJE DESC, INCORRECTAS DESC",null);
         if (cursor.moveToFirst()){
             do {
                 Score score = new Score();
