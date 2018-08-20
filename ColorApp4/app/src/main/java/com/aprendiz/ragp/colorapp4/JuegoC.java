@@ -2,6 +2,7 @@ package com.aprendiz.ragp.colorapp4;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.design.widget.FloatingActionButton;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Juego extends AppCompatActivity implements View.OnClickListener{
+public class JuegoC extends AppCompatActivity implements View.OnClickListener{
     TextView txtCantidad, txtCorrectas, txtFaltantes, txtTiempo, txtPalabra;
     ImageButton btnColor1,btnColor2,btnColor3,btnColor4;
     FloatingActionButton btnPausa;
@@ -33,10 +34,12 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
     boolean bandera1=true;
     int ab=0;
     int valorcito=0,pausas;
+    SharedPreferences juegoC;
+    int modo, tiempo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_juego);
+        setContentView(R.layout.activity_juego_c);
         inizialite();
         listar();
         inputValues();
@@ -83,12 +86,24 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
     }
 
     private void inputValues() {
-        cantidad =0;
+        juegoC= getSharedPreferences("juegoC",MODE_PRIVATE);
+        modo=juegoC.getInt("modo",1);
+        if (modo==1) {
+            tiempo=juegoC.getInt("tiempo",3);
+            pbTiempo.setProgress(segundos[1]);
+            pbTiempo.setMax(segundos[1]);
+        }else {
+            cantidad = juegoC.getInt("cantidad", 3);
+            segundos= new int[]{0,0,0};
+            pbTiempo.setProgress(segundos[2]);
+            pbTiempo.setMax(30);
+        }
+
         correctas=0;
         incorrectas=0;
         faltantes=3;
-        pbTiempo.setMax(segundos[1]);
-        pbTiempo.setProgress(segundos[1]);
+
+
 
     }
 
@@ -127,7 +142,16 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
                         public void run() {
                             if (bandera1) {
                                 segundos[0]++;
-                                segundos[1]--;
+                                if (modo==1) {
+                                    segundos[1]--;
+                                }else {
+                                    segundos[1]++;
+                                    segundos[2]++;
+                                    pbTiempo.setProgress(segundos[2]);
+                                    if (segundos[2]==30){
+                                        segundos[2]=0;
+                                    }
+                                }
                                 txtTiempo.setText("Tiempo: "+segundos[1]);
                                 pbTiempo.setProgress(segundos[1]);
                                 if (segundos[0]==3){
@@ -150,11 +174,11 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
     }
 
     private void endGame() {
-        if (ab==0 && (segundos[1]==30 || faltantes==0)){
+        if (ab==0 && ( (modo==1 &&(segundos[1]==30 || faltantes==0)) || (modo==2 &&(faltantes==0)) )){
             ab=1;
             bandera=false;
             bandera1=false;
-            Intent intent = new Intent(Juego.this,Resumen.class);
+            Intent intent = new Intent(JuegoC.this,Resumen.class);
             startActivity(intent);
             finish();
 
@@ -262,4 +286,3 @@ public class Juego extends AppCompatActivity implements View.OnClickListener{
 
     }
 }
-
