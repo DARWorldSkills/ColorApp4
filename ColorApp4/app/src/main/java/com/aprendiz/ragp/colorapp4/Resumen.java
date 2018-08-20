@@ -18,7 +18,7 @@ public class Resumen extends AppCompatActivity {
 
     private void inizialite() {
         txtCorrectas= findViewById(R.id.txtCorrectas);
-        txtIncorrectas = findViewById(R.id.txtIncorrectas);
+        txtIncorrectas = findViewById(R.id.txtPalabrasDesplegadas);
     }
 
     private void inputData() {

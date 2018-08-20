@@ -50,11 +50,13 @@
                 android:id="@+id/txtPrimero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="128dp"
                 android:text="TextView"
-                android:textStyle="bold"
+                android:textColor="@android:color/holo_orange_dark"
                 android:textSize="20sp"
-                android:textColor="@android:color/holo_orange_dark"/>
+                android:textStyle="bold" />
 
 
         </RelativeLayout>
@@ -75,7 +77,9 @@
                 android:id="@+id/txtSegundo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="128dp"
                 android:text="TextView"
                 android:textColor="@android:color/holo_orange_dark"
                 android:textSize="20sp"
@@ -100,11 +104,13 @@
                 android:id="@+id/txtTercero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="128dp"
                 android:text="TextView"
-                android:textStyle="bold"
+                android:textColor="@android:color/holo_orange_dark"
                 android:textSize="20sp"
-                android:textColor="@android:color/holo_orange_dark"/>
+                android:textStyle="bold" />
 
 
         </RelativeLayout>
@@ -125,11 +131,13 @@
                 android:id="@+id/txtCuarto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="129dp"
                 android:text="TextView"
-                android:textStyle="bold"
+                android:textColor="@android:color/holo_orange_dark"
                 android:textSize="20sp"
-                android:textColor="@android:color/holo_orange_dark"/>
+                android:textStyle="bold" />
 
 
         </RelativeLayout>
@@ -151,18 +159,18 @@
                 android:id="@+id/txtQuinto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="128dp"
                 android:text="TextView"
-                android:textStyle="bold"
+                android:textColor="@android:color/holo_orange_dark"
                 android:textSize="20sp"
-                android:textColor="@android:color/holo_orange_dark"/>
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
 
     </LinearLayout>
-
-
 
 
     <Button
@@ -173,7 +181,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/home"
+        android:onClick="home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="OnClick" />
 </android.support.constraint.ConstraintLayout>
