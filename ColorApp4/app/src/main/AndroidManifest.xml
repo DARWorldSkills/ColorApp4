@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".Juego" />
         <activity android:name=".MenuT" />
-        <activity android:name=".Resumen"></activity>
+        <activity android:name=".Resumen" />
+        <activity android:name=".Configuracion" />
+        <activity android:name=".Puntuacion"></activity>
     </application>
 
 </manifest>
